@@ -88,7 +88,7 @@ export default function Spread1({ onNext }: Spread1Props) {
             </p>
 
             <div className="letter-details">
-              <p>Địa điểm:THPT Chuyên Lê Quý Đôn</p>
+              <p>Địa điểm :THPT Chuyên Lê Quý Đôn</p>
               <p className="letter-detail-sub">(số 1 Vũ Văn Dũng, Đà Nẵng)</p>
               <p>Ngày 18/4/2026 · Thứ Bảy</p>
               <p>Từ 9g30 đến 11g10</p>
