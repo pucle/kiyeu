@@ -911,8 +911,9 @@ body {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  z-index: 50;
+  z-index: 100;
   min-width: 200px;
+  pointer-events: auto;
 }
 
 .cta-btn:hover {

@@ -1,52 +1,22 @@
-// In-memory mock for RSVP entries
-// Note: This data will be reset every time the Vercel Serverless Function restarts.
-// For a simple demo/invitation, this is the quickest way to get it running without a database.
-
-interface RsvpEntry {
-  id: number;
-  nickname: string;
-  display_name: boolean;
-  flower_type: string;
-  flower_color: string;
-  time_slot: string;
-  message?: string;
-  created_at: Date;
-}
-
-// Global variable to persist between requests (on the same instance)
-let rsvpEntries: RsvpEntry[] = [];
-let nextId = 1;
+import { neon } from '@neondatabase/serverless';
 
 export function getDb() {
-  // Return a mock SQL-like interface for compatibility
-  return async (strings: TemplateStringsArray, ...values: any[]) => {
-    const query = strings.join('').toLowerCase();
-    
-    if (query.includes('select * from rsvp_entries')) {
-      return rsvpEntries;
-    }
-    
-    if (query.includes('insert into rsvp_entries')) {
-      const [nickname, display_name, flower_type, flower_color, time_slot, message] = values;
-      const newEntry: RsvpEntry = {
-        id: nextId++,
-        nickname,
-        display_name,
-        flower_type,
-        flower_color,
-        time_slot,
-        message,
-        created_at: new Date(),
-      };
-      rsvpEntries.push(newEntry);
-      return [newEntry];
-    }
-    
-    return [];
-  };
+  const sql = neon(process.env.DATABASE_URL!);
+  return sql;
 }
 
 export async function initDb() {
-  // No-op for mock DB
-  console.log('Mock DB initialized (in-memory)');
+  const sql = getDb();
+  await sql`
+    CREATE TABLE IF NOT EXISTS rsvp_entries (
+      id SERIAL PRIMARY KEY,
+      nickname TEXT NOT NULL,
+      display_name BOOLEAN DEFAULT true,
+      flower_type TEXT NOT NULL,
+      flower_color TEXT NOT NULL,
+      time_slot TEXT NOT NULL,
+      message TEXT,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+    )
+  `;
 }
