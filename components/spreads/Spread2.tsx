@@ -79,6 +79,10 @@ export default function Spread2({
 
           <div className="section-divider" />
 
+          <div className="scroll-hint-mobile">
+            <span>↓ Lướt xuống xem thêm các loại hoa</span>
+          </div>
+
           {/* Flower type grid */}
           <div className="flower-grid">
             {FLOWER_TYPES.map((type) => (
@@ -98,9 +102,6 @@ export default function Spread2({
               </button>
             ))}
           </div>
-          <div className="scroll-hint-mobile">
-            <span>↓ Lướt xuống xem thêm hoa</span>
-          </div>
         </div>
       </div>
 
@@ -112,6 +113,10 @@ export default function Spread2({
           <p className="instruction-text">
             * Chọn hoa, bỏ hoa vào giỏ để lựa giờ nghe
           </p>
+
+          <div className="scroll-hint-mobile">
+            <span>↓ Lướt xuống để xem thêm màu</span>
+          </div>
 
           <div className="color-grid">
             {FLOWER_COLORS.map((c) => (
@@ -129,9 +134,6 @@ export default function Spread2({
                 <span className="swatch-name">{c.name}</span>
               </button>
             ))}
-          </div>
-          <div className="scroll-hint-mobile">
-            <span>↓ Lướt xuống để chọn màu</span>
           </div>
 
             {selectedFlower && selectedColor && (
