@@ -38,6 +38,9 @@ export default function ConfirmModal({ flowerType, flowerColor, timeSlot, onConf
             maxLength={200}
             rows={3}
           />
+          <p className="modal-privacy-note">
+            * Lời nhắn sẽ được bảo mật, chỉ mình Púc thấy
+          </p>
         </div>
         
         <p className="modal-subtext">Xác nhận luôn nghen 🌸</p>

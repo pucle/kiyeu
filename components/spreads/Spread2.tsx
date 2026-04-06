@@ -98,6 +98,9 @@ export default function Spread2({
               </button>
             ))}
           </div>
+          <div className="scroll-hint-mobile">
+            <span>↓ Lướt xuống xem thêm hoa</span>
+          </div>
         </div>
       </div>
 
@@ -126,6 +129,9 @@ export default function Spread2({
                 <span className="swatch-name">{c.name}</span>
               </button>
             ))}
+          </div>
+          <div className="scroll-hint-mobile">
+            <span>↓ Lướt xuống để chọn màu</span>
           </div>
 
             {selectedFlower && selectedColor && (

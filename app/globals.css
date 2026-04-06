@@ -1547,6 +1547,39 @@ body {
   outline-offset: 2px;
 }
 
+.modal-privacy-note {
+  font-family: 'Crimson Pro', serif;
+  font-size: 11px;
+  color: var(--accent-red);
+  font-style: italic;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+.scroll-hint-mobile {
+  display: none;
+  text-align: center;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: var(--accent-red);
+  margin-top: 4px;
+  margin-bottom: 8px;
+  animation: bounceDown 2s infinite;
+  font-weight: 700;
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(3px);}
+  60% {transform: translateY(2px);}
+}
+
+@media (max-width: 768px) {
+  .scroll-hint-mobile {
+    display: block;
+  }
+}
+
 /* ===================== OWNER PANEL ===================== */
 .owner-key-btn {
   position: fixed;
