@@ -16,6 +16,7 @@ interface RsvpEntry {
   flower_color: string;
   time_slot: string;
   created_at: string;
+  message?: string;
   is_hidden?: boolean;
 }
 
@@ -245,6 +246,9 @@ export default function OwnerPanel() {
                                     <span className="schedule-guest-flower-name">
                                       {getFlowerName(e.flower_type)}
                                     </span>
+                                    {e.message && (
+                                      <div className="schedule-guest-message">💬 "{e.message}"</div>
+                                    )}
                                   </div>
                                   <button
                                     className="btn-delete-small"
@@ -287,6 +291,11 @@ export default function OwnerPanel() {
                               <div className="owner-name-cell">
                                 {entry.nickname}
                                 {!entry.display_name && <span className="owner-hidden-tag"> ẩn danh</span>}
+                                {entry.message && (
+                                  <div className="owner-table-message" style={{ fontSize: '0.85em', color: '#666', marginTop: 4 }}>
+                                    💬 "{entry.message}"
+                                  </div>
+                                )}
                               </div>
                             </td>
                             <td>

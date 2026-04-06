@@ -14,13 +14,14 @@ export async function GET(request: NextRequest) {
     
     const entries = await sql`SELECT * FROM rsvp_entries ORDER BY created_at ASC`;
     
-    const publicEntries = entries.map((entry: Record<string, unknown>) => ({
+    const publicEntries = entries.map((entry: any) => ({
       id: entry.id,
       nickname: (!entry.display_name && !isOwner) ? 'Ẩn danh 🌸' : entry.nickname,
       display_name: entry.display_name,
       flower_type: entry.flower_type,
       flower_color: entry.flower_color,
       time_slot: entry.time_slot,
+      message: isOwner ? entry.message : undefined, // Only owner can see messages
       created_at: entry.created_at,
       is_hidden: !entry.display_name,
     }));
@@ -38,15 +39,15 @@ export async function POST(request: NextRequest) {
     await initDb();
     
     const body = await request.json();
-    const { nickname, display_name, flower_type, flower_color, time_slot } = body;
+    const { nickname, display_name, flower_type, flower_color, time_slot, message } = body;
     
     if (!nickname || !flower_type || !flower_color || !time_slot) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 });
     }
     
     const result = await sql`
-      INSERT INTO rsvp_entries (nickname, display_name, flower_type, flower_color, time_slot)
-      VALUES (${nickname}, ${display_name ?? true}, ${flower_type}, ${flower_color}, ${time_slot})
+      INSERT INTO rsvp_entries (nickname, display_name, flower_type, flower_color, time_slot, message)
+      VALUES (${nickname}, ${display_name ?? true}, ${flower_type}, ${flower_color}, ${time_slot}, ${message || ''})
       RETURNING *
     `;
     

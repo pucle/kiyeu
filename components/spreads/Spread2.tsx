@@ -22,6 +22,7 @@ const FLOWER_COLORS: { name: string; hex: string }[] = [
   { name: 'Nâu latte', hex: '#d4b896' },
   { name: 'Hồng cánh sen', hex: '#f2c4d0' },
   { name: 'Xanh ngọc', hex: '#a8e0d8' },
+  { name: 'Xanh navy', hex: '#000080' },
 ];
 
 export { FLOWER_COLORS };

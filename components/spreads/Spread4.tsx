@@ -65,7 +65,7 @@ export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, o
           </div>
 
           <h2 className="thank-you-heading">
-            Cảm ơn {nickname}!
+            Thén kìu ve ri ve ri mựt {nickname}!
           </h2>
           <p className="thank-you-text">
             Nhớ có mặt lúc <strong>{timeSlot}</strong> nha

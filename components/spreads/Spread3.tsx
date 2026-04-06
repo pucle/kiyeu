@@ -51,7 +51,7 @@ export default function Spread3({
 
   const entriesBySlot = (slot: string) => (entries || []).filter((e) => e.time_slot === slot);
 
-  const handleConfirm = async () => {
+  const handleConfirm = async (message: string) => {
     if (!confirmSlot || submitting) return;
     setSubmitting(true);
     try {
@@ -64,6 +64,7 @@ export default function Spread3({
           flower_type: selectedFlower,
           flower_color: selectedColor,
           time_slot: confirmSlot,
+          message,
         }),
       });
       if (res.ok) {

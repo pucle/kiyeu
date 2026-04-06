@@ -9,6 +9,7 @@ interface RsvpEntry {
   flower_type: string;
   flower_color: string;
   time_slot: string;
+  message?: string;
   created_at: Date;
 }
 
@@ -26,7 +27,7 @@ export function getDb() {
     }
     
     if (query.includes('insert into rsvp_entries')) {
-      const [nickname, display_name, flower_type, flower_color, time_slot] = values;
+      const [nickname, display_name, flower_type, flower_color, time_slot, message] = values;
       const newEntry: RsvpEntry = {
         id: nextId++,
         nickname,
@@ -34,6 +35,7 @@ export function getDb() {
         flower_type,
         flower_color,
         time_slot,
+        message,
         created_at: new Date(),
       };
       rsvpEntries.push(newEntry);

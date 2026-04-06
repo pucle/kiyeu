@@ -212,19 +212,7 @@ export default function Book() {
           )}
         </div>
 
-        {/* Navigation arrows (subtle, small) */}
-        <div className="book-nav">
-          {currentSpread > 0 && (
-            <button className="nav-arrow nav-prev" onClick={goPrev} title="Trang trước" id="btn-prev">
-              ◀
-            </button>
-          )}
-          {currentSpread < totalSpreads - 1 && (
-            <button className="nav-arrow nav-next" onClick={goNext} title="Trang sau" id="btn-next">
-              ▶
-            </button>
-          )}
-        </div>
+
 
         {/* Page dots indicator */}
         <div className="page-dots">
@@ -243,6 +231,19 @@ export default function Book() {
           <div className="swipe-hint" aria-hidden="true">
             <span className="swipe-hint-text">Vuốt để lật trang →</span>
           </div>
+        )}
+      </div>
+
+      <div className="book-nav">
+        {currentSpread > 0 && (
+          <button className="nav-arrow nav-prev" onClick={goPrev} title="Trang trước" id="btn-prev">
+            ◀
+          </button>
+        )}
+        {currentSpread < totalSpreads - 1 && (
+          <button className="nav-arrow nav-next" onClick={goNext} title="Trang sau" id="btn-next">
+            ▶
+          </button>
         )}
       </div>
 
