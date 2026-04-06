@@ -128,24 +128,23 @@ export default function Spread2({
             ))}
           </div>
 
-          {/* Preview */}
-          {selectedFlower && selectedColor && (
-            <div className="flower-preview">
-              <span className="preview-label">Hoa của bạn:</span>
-              <FlowerSVG type={selectedFlower} color={selectedColor} size={120} />
-            </div>
-          )}
+            {selectedFlower && selectedColor && (
+              <div className="flower-preview">
+                <span className="preview-label">Hoa của bạn:</span>
+                <FlowerSVG type={selectedFlower} color={selectedColor} size={120} />
+              </div>
+            )}
+
+            <button
+              className={`cta-btn cta-btn-outside ${canProceed ? '' : 'cta-btn-disabled'}`}
+              onClick={canProceed ? onNext : undefined}
+              disabled={!canProceed}
+              id="btn-go-spread3"
+            >
+              Chọn xong, đặt giờ!! →
+            </button>
+          </div>
         </div>
       </div>
-
-      <button
-        className={`cta-btn cta-btn-outside ${canProceed ? '' : 'cta-btn-disabled'}`}
-        onClick={canProceed ? onNext : undefined}
-        disabled={!canProceed}
-        id="btn-go-spread3"
-      >
-        Chọn xong, đặt giờ!! →
-      </button>
-    </div>
-  );
+    );
 }

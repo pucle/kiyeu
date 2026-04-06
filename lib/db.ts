@@ -15,8 +15,14 @@ export async function initDb() {
       flower_type TEXT NOT NULL,
       flower_color TEXT NOT NULL,
       time_slot TEXT NOT NULL,
-      message TEXT,
-      created_at TIMESTAMPTZ DEFAULT NOW()
+      created_at TIMESTAMPTZ DEFAULT NOW(),
+      message TEXT
     )
   `;
+  // migration for existing tables
+  try {
+    await sql`ALTER TABLE rsvp_entries ADD COLUMN IF NOT EXISTS message TEXT`;
+  } catch (err) {
+    console.log('Column message existence check/addition', err);
+  }
 }
