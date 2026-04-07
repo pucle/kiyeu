@@ -273,6 +273,7 @@ export default function Spread3({
         <div className="page-inner spread3-full">
           <h2 className="page-heading spread3-heading">Bạn sẽ đến lúc mấy giờ?</h2>
           <p className="spread3-subtitle">Chọn giỏ hoa để đặt bông hoa của bạn vào nhé 🌼</p>
+          <p className="spread3-note">(Có thể chọn chung khung giờ với người khác nhée!)</p>
           <div className="baskets-grid">
             {TIME_SLOTS.slice(0, 5).map((slot, i) => renderBasket(slot, i))}
           </div>
