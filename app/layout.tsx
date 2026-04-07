@@ -4,6 +4,28 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Thiệp Mời Kỉ Yếu Của Púc',
   description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
+  openGraph: {
+    title: 'Thiệp Mời Kỉ Yếu Của Púc',
+    description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
+    url: 'https://kiyeu-jf8v.vercel.app/',
+    siteName: 'Kỉ Yếu Của Púc',
+    images: [
+      {
+        url: '/preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Thiệp Mời Kỉ Yếu Của Púc',
+      },
+    ],
+    locale: 'vi_VN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Thiệp Mời Kỉ Yếu Của Púc',
+    description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
+    images: ['/preview.png'],
+  },
 };
 
 export default function RootLayout({
