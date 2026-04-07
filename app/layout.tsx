@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://kiyeu-jf8v.vercel.app'),
   title: 'Thiệp Mời Kỉ Yếu Của Púc',
   description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
   openGraph: {
     title: 'Thiệp Mời Kỉ Yếu Của Púc',
     description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
-    url: 'https://kiyeu-jf8v.vercel.app/',
-    siteName: 'Kỉ Yếu Của Púc',
+    url: '/',
+    siteName: 'Thiệp Mời Kỉ Yếu Của Púc',
     images: [
       {
         url: '/preview.png',
