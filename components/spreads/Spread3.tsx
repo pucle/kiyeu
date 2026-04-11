@@ -7,8 +7,9 @@ import BasketSVG from '../BasketSVG';
 import ConfirmModal from '../ConfirmModal';
 
 const TIME_SLOTS = [
-  '09:30', '09:40', '09:50', '10:00', '10:10',
-  '10:20', '10:30', '10:40', '10:50', '11:00',
+  '09:00', '09:10', '09:20', '09:30', '09:40',
+  '09:50', '10:00', '10:10', '10:20', '10:30',
+  '10:40', '10:50', '11:00',
 ];
 
 interface RsvpEntry {
@@ -249,17 +250,17 @@ export default function Spread3({
           <div className="page-inner spread3-full">
             <div className="already-submitted">
               <p className="already-text">Ồ, con vợ đã chọn giờ rồi lày</p>
-              <p className="already-sub">Gặp nhau ngày 18/4 nha</p>
+              <p className="already-sub">Gặp nhau ngày 25/4 nha</p>
             </div>
             <div className="baskets-grid">
-              {TIME_SLOTS.slice(0, 5).map((slot) => renderBasketView(slot))}
+              {TIME_SLOTS.slice(0, 7).map((slot) => renderBasketView(slot))}
             </div>
           </div>
         </div>
         <div className="page page-right page-paper">
           <div className="page-inner spread3-full">
             <div className="baskets-grid baskets-grid-right">
-              {TIME_SLOTS.slice(5).map((slot) => renderBasketView(slot))}
+              {TIME_SLOTS.slice(7).map((slot) => renderBasketView(slot))}
             </div>
           </div>
         </div>
@@ -275,14 +276,14 @@ export default function Spread3({
           <p className="spread3-subtitle">Chọn giỏ hoa để đặt bông hoa của bạn vào nhé 🌼</p>
           <p className="spread3-note">(Có thể chọn chung khung giờ với người khác nhée!)</p>
           <div className="baskets-grid">
-            {TIME_SLOTS.slice(0, 5).map((slot, i) => renderBasket(slot, i))}
+            {TIME_SLOTS.slice(0, 7).map((slot, i) => renderBasket(slot, i))}
           </div>
         </div>
       </div>
       <div className="page page-right page-paper">
         <div className="page-inner spread3-full">
           <div className="baskets-grid baskets-grid-right">
-            {TIME_SLOTS.slice(5).map((slot, i) => renderBasket(slot, i + 5))}
+            {TIME_SLOTS.slice(7).map((slot, i) => renderBasket(slot, i + 7))}
           </div>
         </div>
       </div>

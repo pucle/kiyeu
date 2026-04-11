@@ -22,7 +22,7 @@ function getCountdown(target: Date): { days: number; hours: number; minutes: num
 }
 
 export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, onBack }: Spread4Props) {
-  const targetDate = new Date('2026-04-18T09:30:00+07:00');
+  const targetDate = new Date('2026-04-25T09:00:00+07:00');
   const [countdown, setCountdown] = useState(getCountdown(targetDate));
 
   useEffect(() => {
@@ -131,7 +131,7 @@ export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, o
                 );
               })}
               <text x="100" y="95" textAnchor="middle" fill="var(--ink)" fontFamily="'Playfair Display', serif" fontSize="14" fontWeight="700">
-                18/4
+                25/4
               </text>
               <text x="100" y="115" textAnchor="middle" fill="var(--ink-light)" fontFamily="'Crimson Pro', serif" fontSize="11">
                 2026

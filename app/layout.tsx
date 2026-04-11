@@ -4,10 +4,10 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://kiyeu-jf8v.vercel.app'),
   title: 'Thiệp Mời Kỉ Yếu Của Púc',
-  description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
+  description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 25/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
   openGraph: {
     title: 'Thiệp Mời Kỉ Yếu Của Púc',
-    description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
+    description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 25/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
     url: '/',
     siteName: 'Thiệp Mời Kỉ Yếu Của Púc',
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Thiệp Mời Kỉ Yếu Của Púc',
-    description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 18/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
+    description: 'Thiệp mời kỉ yếu của Đình Púc - Ngày 25/4/2026 tại THPT Chuyên Lê Quý Đôn, Đà Nẵng. Chọn khung giờ chụp ảnh của bạn nhế :DD',
     images: ['/preview.png'],
   },
 };
