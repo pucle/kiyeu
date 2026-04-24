@@ -4,10 +4,6 @@ import React, { useState, useEffect } from 'react';
 import FlowerSVG from '../FlowerSVG';
 
 interface Spread4Props {
-  nickname: string;
-  flowerType: string;
-  flowerColor: string;
-  timeSlot: string;
   onBack: () => void;
 }
 
@@ -21,9 +17,13 @@ function getCountdown(target: Date): { days: number; hours: number; minutes: num
   return { days, hours, minutes, seconds };
 }
 
-export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, onBack }: Spread4Props) {
+export default function Spread4({ onBack }: Spread4Props) {
   const targetDate = new Date('2026-04-25T09:00:00+07:00');
   const [countdown, setCountdown] = useState(getCountdown(targetDate));
+
+  // Default visuals for the static invitation
+  const flowerType = 'daisy'; 
+  const flowerColor = '#f4c2c2';
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -65,15 +65,15 @@ export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, o
           </div>
 
           <h2 className="thank-you-heading">
-            Thén kìu ve ri ve ri mựt {nickname}!
+            Hẹn gặp bạn tại Kỉ yếu nhé!
           </h2>
           <p className="thank-you-text">
-            Nhớ có mặt lúc <strong>{timeSlot}</strong> nha
+            Thời gian: <strong>9:00 - 11:10</strong>
           </p>
 
           {/* Countdown */}
           <div className="countdown">
-            <p className="countdown-label">Còn lại:</p>
+            <p className="countdown-label">Đếm ngược đến ngày trọng đại:</p>
             <div className="countdown-digits">
               <div className="countdown-unit">
                 <span className="countdown-num">{String(countdown.days).padStart(2, '0')}</span>
@@ -97,8 +97,8 @@ export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, o
             </div>
           </div>
 
-          <button className="cta-btn" onClick={onBack} id="btn-view-baskets">
-            Xem tất cả giỏ hoa →
+          <button className="cta-btn" onClick={onBack} id="btn-view-letter">
+            ← Quay lại đọc thư
           </button>
         </div>
       </div>
@@ -139,7 +139,7 @@ export default function Spread4({ nickname, flowerType, flowerColor, timeSlot, o
             </svg>
           </div>
           <p className="thank-you-footer">
-            Hẹn gặp tại<br />
+            Địa điểm:<br />
             <strong>THPT Chuyên Lê Quý Đôn</strong><br />
             Đà Nẵng
           </p>

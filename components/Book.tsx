@@ -2,32 +2,12 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Spread1 from './spreads/Spread1';
-import Spread2 from './spreads/Spread2';
-import Spread3 from './spreads/Spread3';
 import Spread4 from './spreads/Spread4';
-import OwnerPanel from './OwnerPanel';
-
-interface RsvpEntry {
-  id: number;
-  nickname: string;
-  flower_type: string;
-  flower_color: string;
-  time_slot: string;
-}
 
 export default function Book() {
   const [currentSpread, setCurrentSpread] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [flipDirection, setFlipDirection] = useState<'next' | 'prev'>('next');
-
-  // Form state
-  const [nickname, setNickname] = useState('');
-  const [displayName, setDisplayName] = useState(true);
-  const [selectedFlower, setSelectedFlower] = useState('');
-  const [selectedColor, setSelectedColor] = useState('');
-
-  // After RSVP
-  const [rsvpEntry, setRsvpEntry] = useState<RsvpEntry | null>(null);
 
   // Drag/swipe state
   const dragRef = useRef<{ startX: number; startY: number; isDragging: boolean; startTime: number }>({
@@ -36,7 +16,7 @@ export default function Book() {
   const [dragDelta, setDragDelta] = useState(0);
   const bookRef = useRef<HTMLDivElement>(null);
 
-  const totalSpreads = 4;
+  const totalSpreads = 2; // Only Cover/Letter and Countdown/Location
 
   const flipTo = useCallback((target: number) => {
     if (isFlipping || target === currentSpread || target < 0 || target >= totalSpreads) return;
@@ -66,7 +46,7 @@ export default function Book() {
     // Don't capture drag on interactive elements
     const tag = (e.target as HTMLElement).tagName.toLowerCase();
     if (['input', 'button', 'textarea', 'select', 'label', 'a'].includes(tag)) return;
-    if ((e.target as HTMLElement).closest('button, input, textarea, select, label, a, .flower-card, .color-swatch, .basket-interactive')) return;
+    if ((e.target as HTMLElement).closest('button, input, textarea, select, label, a')) return;
 
     dragRef.current = {
       startX: e.clientX,
@@ -135,11 +115,6 @@ export default function Book() {
     };
   }, [goNext, goPrev]);
 
-  const handleRsvpSuccess = (entry: RsvpEntry) => {
-    setRsvpEntry(entry);
-    flipTo(3);
-  };
-
   const flipClass = isFlipping
     ? flipDirection === 'next' ? 'book-flipping-next' : 'book-flipping-prev'
     : '';
@@ -170,49 +145,8 @@ export default function Book() {
           style={dragRotate ? { transform: dragRotate, transition: 'none' } : undefined}
         >
           {currentSpread === 0 && <Spread1 onNext={goNext} />}
-          {currentSpread === 1 && (
-            <Spread2
-              nickname={nickname}
-              setNickname={setNickname}
-              displayName={displayName}
-              setDisplayName={setDisplayName}
-              selectedFlower={selectedFlower}
-              setSelectedFlower={setSelectedFlower}
-              selectedColor={selectedColor}
-              setSelectedColor={setSelectedColor}
-              onNext={goNext}
-            />
-          )}
-          {currentSpread === 2 && (
-            <Spread3
-              nickname={nickname}
-              displayName={displayName}
-              selectedFlower={selectedFlower}
-              selectedColor={selectedColor}
-              onSuccess={handleRsvpSuccess}
-            />
-          )}
-          {currentSpread === 3 && rsvpEntry && (
-            <Spread4
-              nickname={rsvpEntry.nickname}
-              flowerType={rsvpEntry.flower_type}
-              flowerColor={rsvpEntry.flower_color}
-              timeSlot={rsvpEntry.time_slot}
-              onBack={() => flipTo(2)}
-            />
-          )}
-          {currentSpread === 3 && !rsvpEntry && (
-            <Spread4
-              nickname={nickname || 'Bạn'}
-              flowerType={selectedFlower || 'daisy'}
-              flowerColor={selectedColor || '#f4c2c2'}
-              timeSlot="09:30"
-              onBack={() => flipTo(2)}
-            />
-          )}
+          {currentSpread === 1 && <Spread4 onBack={goPrev} />}
         </div>
-
-
 
         {/* Page dots indicator */}
         <div className="page-dots">
@@ -246,8 +180,6 @@ export default function Book() {
           </button>
         )}
       </div>
-
-      <OwnerPanel />
     </div>
   );
 }

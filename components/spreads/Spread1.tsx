@@ -107,8 +107,8 @@ export default function Spread1({ onNext }: Spread1Props) {
             </p>
           </div>
 
-          <button className="wax-seal-btn" onClick={onNext} id="btn-go-spread2">
-            <span className="wax-seal-text">Chọn giờ chụp<br />của bạn →</span>
+          <button className="wax-seal-btn" onClick={onNext} id="btn-go-countdown">
+            <span className="wax-seal-text">Hẹn gặp<br />nhé! →</span>
           </button>
         </div>
       </div>
