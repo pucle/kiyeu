@@ -18,7 +18,7 @@ function getCountdown(target: Date): { days: number; hours: number; minutes: num
 }
 
 export default function Spread4({ onBack }: Spread4Props) {
-  const targetDate = new Date('2026-04-25T09:00:00+07:00');
+  const targetDate = new Date('2026-05-09T09:00:00+07:00');
   const [countdown, setCountdown] = useState(getCountdown(targetDate));
 
   // Default visuals for the static invitation
@@ -73,7 +73,7 @@ export default function Spread4({ onBack }: Spread4Props) {
 
           {/* Countdown */}
           <div className="countdown">
-            <p className="countdown-label">Đếm ngược đến ngày trọng đại:</p>
+            <p className="countdown-label">Đếm ngược đến ngày kỉ yếu:</p>
             <div className="countdown-digits">
               <div className="countdown-unit">
                 <span className="countdown-num">{String(countdown.days).padStart(2, '0')}</span>
@@ -131,7 +131,7 @@ export default function Spread4({ onBack }: Spread4Props) {
                 );
               })}
               <text x="100" y="95" textAnchor="middle" fill="var(--ink)" fontFamily="'Playfair Display', serif" fontSize="14" fontWeight="700">
-                25/4
+                9/5
               </text>
               <text x="100" y="115" textAnchor="middle" fill="var(--ink-light)" fontFamily="'Crimson Pro', serif" fontSize="11">
                 2026
