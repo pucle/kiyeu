@@ -46,11 +46,11 @@ export default function FlatCard() {
   };
 
   return (
-    <div className="flat-container" style={{ padding: '20px', minHeight: '100dvh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className="flat-container" style={{ padding: '40px 20px', minHeight: '100dvh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5' }}>
       <button 
         onClick={handleExport}
         className="cta-btn" 
-        style={{ marginBottom: '20px', padding: '10px 20px', fontSize: '16px' }}
+        style={{ marginBottom: '20px', padding: '12px 24px', fontSize: '16px' }}
       >
         Xuất file JPG
       </button>
@@ -59,23 +59,22 @@ export default function FlatCard() {
         className="flat-card" 
         ref={cardRef}
         style={{
-          width: '100%',
-          maxWidth: '500px',
-          background: 'linear-gradient(180deg, #5b9bd5 0%, #87CEEB 20%, #b8dff0 60%, #e8f4f8 100%)',
-          borderRadius: '12px',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+          width: '960px',
+          height: '560px',
+          background: 'linear-gradient(135deg, #5b9bd5 0%, #87CEEB 30%, #b8dff0 70%, #e8f4f8 100%)',
+          borderRadius: '16px',
+          boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
           overflow: 'hidden',
           position: 'relative',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          paddingBottom: '40px'
+          flexDirection: 'row',
+          alignItems: 'stretch'
         }}
       >
-        {/* Top Cover Section */}
-        <div style={{ position: 'relative', width: '100%', height: '350px', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '40px' }}>
+        {/* Left Side: Visuals & Title */}
+        <div style={{ flex: '0 0 45%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', borderRight: '1px solid rgba(255,255,255,0.3)' }}>
           {/* Clouds */}
-          <svg style={{ position: 'absolute', top: '20px', width: '100%', height: '100px' }} viewBox="0 0 300 80" aria-hidden="true">
+          <svg style={{ position: 'absolute', top: '40px', width: '100%', height: '100px' }} viewBox="0 0 300 80" aria-hidden="true">
             <ellipse cx="50" cy="50" rx="40" ry="20" fill="white" opacity="0.85" />
             <ellipse cx="80" cy="45" rx="35" ry="18" fill="white" opacity="0.75" />
             <ellipse cx="65" cy="55" rx="30" ry="15" fill="white" opacity="0.65" />
@@ -85,7 +84,7 @@ export default function FlatCard() {
           </svg>
 
           {/* Hot air balloon */}
-          <svg style={{ width: '80px', height: '120px', zIndex: 2, marginBottom: '20px' }} viewBox="0 0 100 150" aria-hidden="true">
+          <svg style={{ width: '100px', height: '150px', zIndex: 2, marginBottom: '30px' }} viewBox="0 0 100 150" aria-hidden="true">
             <path d="M50,10 Q20,10 15,45 Q10,75 50,90 Q90,75 85,45 Q80,10 50,10 Z" fill="#d95f4b" />
             <path d="M50,10 Q50,50 50,90" stroke="white" strokeWidth="1" fill="none" opacity="0.6" />
             <path d="M30,20 Q50,55 70,20" stroke="white" strokeWidth="0.8" fill="none" opacity="0.4" />
@@ -100,60 +99,62 @@ export default function FlatCard() {
           </svg>
 
           <div className="cover-title" style={{ textAlign: 'center', zIndex: 2 }}>
-            <h1 className="cover-line1">fen li</h1>
-            <h1 className="cover-line2">rì mai đờ</h1>
-            <p className="cover-subtitle">Bạn có hẹn với Púc! · 2026</p>
+            <h1 className="cover-line1" style={{ fontSize: '3rem', marginBottom: '5px' }}>fen li</h1>
+            <h1 className="cover-line2" style={{ fontSize: '4.5rem', marginBottom: '15px' }}>rì mai đờ</h1>
+            <p className="cover-subtitle" style={{ fontSize: '1.2rem' }}>Bạn có hẹn với Púc! · 2026</p>
           </div>
         </div>
 
-        {/* Letter Body */}
-        <div style={{ width: '85%', zIndex: 2, textAlign: 'center', marginTop: '20px' }}>
-          <p className="letter-greeting" style={{ marginBottom: '15px' }}>{greeting}</p>
+        {/* Right Side: Content */}
+        <div style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '40px 60px', zIndex: 2 }}>
+          <p className="letter-greeting" style={{ fontSize: '1.8rem', marginBottom: '20px', color: '#1a2b3c' }}>{greeting}</p>
           
-          <div className="letter-body" style={{ fontSize: '1.1rem', marginBottom: '20px' }}>
-            <p style={{ marginBottom: '10px' }}>
+          <div className="letter-body" style={{ fontSize: '1.25rem', lineHeight: '1.6', color: '#1a2b3c' }}>
+            <p style={{ marginBottom: '15px' }}>
               Bạn có hẹn với Púc vào ngày 9/5/2026 :D
             </p>
-            <p style={{ marginBottom: '20px' }}>
+            <p style={{ marginBottom: '25px', fontStyle: 'italic' }}>
               Update: Vì một số lí do riêng nên lịch chụp với bạn bè của Púc chuyển thành 11h-1h30. 
             </p>
 
-            <div className="letter-details" style={{ background: 'rgba(255,255,255,0.3)', padding: '15px', borderRadius: '8px', marginBottom: '20px' }}>
-              <p style={{ fontWeight: 'bold' }}>Địa điểm: THPT Chuyên Lê Quý Đôn</p>
-              <p className="letter-detail-sub" style={{ paddingLeft: '0', marginBottom: '10px' }}>(số 1 Vũ Văn Dũng, Đà Nẵng)</p>
-              <p style={{ fontWeight: 'bold' }}>Ngày 9/5/2026 · Thứ Bảy</p>
-              <p style={{ fontWeight: 'bold', color: '#d95f4b' }}>Từ 11g00 đến 13g30</p>
+            <div className="letter-details" style={{ background: 'rgba(255,255,255,0.45)', padding: '20px', borderRadius: '12px', borderLeft: '4px solid #d95f4b', marginBottom: '25px', display: 'flex', flexDirection: 'row', gap: '30px' }}>
+              <div>
+                <p style={{ fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '5px' }}>Địa điểm:</p>
+                <p>THPT Chuyên Lê Quý Đôn</p>
+                <p className="letter-detail-sub" style={{ paddingLeft: '0', fontSize: '0.95rem' }}>(số 1 Vũ Văn Dũng, Đà Nẵng)</p>
+              </div>
+              <div>
+                <p style={{ fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '5px' }}>Thời gian:</p>
+                <p>Ngày 9/5/2026 · Thứ Bảy</p>
+                <p style={{ fontWeight: 'bold', color: '#d95f4b', fontSize: '1.1rem' }}>Từ 11g00 đến 13g30</p>
+              </div>
             </div>
 
-            <p style={{ marginBottom: '20px' }}>
+            <p style={{ marginBottom: '25px' }}>
               Không cần mang quà, không cần mặc đẹp<br />
               (thật ra mặc đẹp thì càng vui hehe),<br />
               chỉ cần mang theo mặt mình là đủ rui
             </p>
 
-            <p className="letter-sign" style={{ marginTop: '20px' }}>
+            <p className="letter-sign" style={{ fontSize: '1.3rem' }}>
               Trân trọng & yêu thương,<br />
-              <strong>Đình Púc</strong>
+              <strong style={{ fontSize: '1.5rem', fontFamily: "'Playfair Display', serif" }}>Đình Púc</strong>
             </p>
           </div>
 
-          {/* Decorative Section */}
-          <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px dashed rgba(0,0,0,0.1)' }}>
-
-            <div style={{ position: 'relative', height: '120px', marginTop: '30px' }}>
-              <svg viewBox="0 0 200 100" width="100%" height="100%" aria-hidden="true" style={{ position: 'absolute', bottom: '-40px', left: 0 }}>
-                <path d="M10,40 Q30,20 50,30 Q70,10 90,25 Q110,5 130,20 Q150,0 170,20 Q190,5 210,25 Q230,10 250,30 Q270,20 290,40"
-                  fill="none" stroke="var(--leaf-mid)" strokeWidth="1.5" />
-                {[30, 70, 110, 150, 190, 230, 270].map((x, i) => (
-                  <g key={i}>
-                    <ellipse cx={x} cy={35} rx="8" ry="4" fill={i % 2 === 0 ? 'var(--leaf-light)' : 'var(--leaf-mid)'}
-                      transform={`rotate(${i % 2 === 0 ? -20 : 20}, ${x}, 35)`} />
-                    <ellipse cx={x + 10} cy={38} rx="7" ry="3.5" fill={i % 2 === 0 ? 'var(--leaf-mid)' : 'var(--leaf-light)'}
-                      transform={`rotate(${i % 2 === 0 ? 15 : -15}, ${x + 10}, 38)`} />
-                  </g>
-                ))}
-              </svg>
-            </div>
+          <div style={{ position: 'absolute', bottom: '20px', right: '40px', height: '60px', width: '300px' }}>
+            <svg viewBox="0 0 200 50" width="100%" height="100%" aria-hidden="true">
+              <path d="M10,40 Q30,20 50,30 Q70,10 90,25 Q110,5 130,20 Q150,0 170,20 Q190,5 210,25 Q230,10 250,30 Q270,20 290,40"
+                fill="none" stroke="var(--leaf-mid)" strokeWidth="1.5" />
+              {[30, 70, 110, 150, 190, 230, 270].map((x, i) => (
+                <g key={i}>
+                  <ellipse cx={x} cy={35} rx="8" ry="4" fill={i % 2 === 0 ? 'var(--leaf-light)' : 'var(--leaf-mid)'}
+                    transform={`rotate(${i % 2 === 0 ? -20 : 20}, ${x}, 35)`} />
+                  <ellipse cx={x + 10} cy={38} rx="7" ry="3.5" fill={i % 2 === 0 ? 'var(--leaf-mid)' : 'var(--leaf-light)'}
+                    transform={`rotate(${i % 2 === 0 ? 15 : -15}, ${x + 10}, 38)`} />
+                </g>
+              ))}
+            </svg>
           </div>
         </div>
       </div>
