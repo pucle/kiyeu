@@ -18,7 +18,7 @@ function getCountdown(target: Date): { days: number; hours: number; minutes: num
 }
 
 export default function Spread4({ onBack }: Spread4Props) {
-  const targetDate = new Date('2026-05-09T09:00:00+07:00');
+  const targetDate = new Date('2026-05-09T11:00:00+07:00');
   const [countdown, setCountdown] = useState(getCountdown(targetDate));
 
   // Default visuals for the static invitation
@@ -68,7 +68,7 @@ export default function Spread4({ onBack }: Spread4Props) {
             Hẹn gặp bạn tại Kỉ yếu nhé!
           </h2>
           <p className="thank-you-text">
-            Thời gian: <strong>9:00 - 11:10</strong>
+            Thời gian: <strong>11:00 - 13:30</strong>
           </p>
 
           {/* Countdown */}

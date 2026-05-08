@@ -57,9 +57,9 @@ export default function Spread1({ onNext }: Spread1Props) {
 
         {/* Title */}
         <div className="cover-title">
-          <h1 className="cover-line1">Thiệp Mời</h1>
-          <h1 className="cover-line2">Kỉ Yếu</h1>
-          <p className="cover-subtitle">Lúc Đình Pê · 2026</p>
+          <h1 className="cover-line1">fen li</h1>
+          <h1 className="cover-line2">rì mai đờ</h1>
+          <p className="cover-subtitle">Bạn có hẹn với Púc! · 2026</p>
         </div>
 
         {/* Bottom leaf border */}
@@ -84,14 +84,17 @@ export default function Spread1({ onNext }: Spread1Props) {
 
           <div className="letter-body">
             <p>
-              Chào cả nhà mình, nhân cái sự kiện là ngày lớp thằng Púc đẹp trai s1tg này đi chụp ảnh kỉ yếu thì em trân trọng kính mời toàn thể anh chị em họ hàng gần xa đúng chín giờ đến mười một giờ mười sáng thứ bảy ngày chín tháng năm năm hai nghìn không trăm hai mươi sáu có mặt tại trường trung học phổ thông chuyên Lê Quý Đôn số một Vũ Văn Dũng để cùng em bắt trọn cái khoảnh khắc hiếm hoi mà em trông tử tế và sáng sủa (tối chưa chắc sủa) nhất trong suốt mười hai năm đèn sách này với triết lý sâu sắc là bạn gái thì có thể simp cô này không hợp thì simp cô khác chứ kỉ yếu đời người chỉ có đúng một lần duy nhất thôi đã qua là không bao giờ quay lại được nên quý giá vô cùng kính mong anh em nhà mình bớt chút thời gian vàng ngọc để có mặt đông đủ chụp cùng em một tấm hình để đời làm kỉ niệm và hãy đến đúng giờ để chung zui trọn vẹn nhất có thể với púc nhế.
+              Bạn có hẹn với Púc vào ngày 9/5/2026!
+            </p>
+            <p>
+              Update: Vì một số lí do riêng nên lịch chụp với bạn bè của Púc chuyển thành 11h-1h30.
             </p>
 
             <div className="letter-details">
               <p>Địa điểm: THPT Chuyên Lê Quý Đôn</p>
               <p className="letter-detail-sub">(số 1 Vũ Văn Dũng, Đà Nẵng)</p>
               <p>Ngày 9/5/2026 · Thứ Bảy</p>
-              <p>Từ 9g00 đến 11g10</p>
+              <p>Từ 11g00 đến 13g30</p>
             </div>
 
             <p>

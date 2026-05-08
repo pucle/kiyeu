@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import html2canvas from 'html2canvas';
 import Spread1 from './spreads/Spread1';
 import Spread4 from './spreads/Spread4';
 
@@ -40,6 +41,24 @@ export default function Book() {
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [goNext, goPrev]);
+
+  const handleExport = async () => {
+    if (!bookRef.current) return;
+    try {
+      const canvas = await html2canvas(bookRef.current, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null,
+      });
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+      const link = document.createElement('a');
+      link.download = `thiep-moi-puc.jpg`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error('Failed to export image', err);
+    }
+  };
 
   // ===== MOUSE DRAG =====
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
@@ -180,6 +199,14 @@ export default function Book() {
           </button>
         )}
       </div>
+
+      <button 
+        onClick={handleExport}
+        className="cta-btn" 
+        style={{ position: 'absolute', top: '20px', right: '20px', minWidth: 'auto', padding: '10px 20px', fontSize: '14px', zIndex: 100 }}
+      >
+        Xuất file JPG
+      </button>
     </div>
   );
 }
