@@ -60,7 +60,7 @@ export default function FlatCard() {
         ref={cardRef}
         style={{
           width: '960px',
-          height: '560px',
+          minHeight: '600px',
           background: 'linear-gradient(135deg, #5b9bd5 0%, #87CEEB 30%, #b8dff0 70%, #e8f4f8 100%)',
           borderRadius: '16px',
           boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
@@ -117,13 +117,13 @@ export default function FlatCard() {
               Update: Vì một số lí do riêng nên lịch chụp với bạn bè của Púc chuyển thành 11h-1h30. 
             </p>
 
-            <div className="letter-details" style={{ background: 'rgba(255,255,255,0.45)', padding: '20px', borderRadius: '12px', borderLeft: '4px solid #d95f4b', marginBottom: '25px', display: 'flex', flexDirection: 'row', gap: '30px' }}>
-              <div>
+            <div className="letter-details" style={{ background: 'rgba(255,255,255,0.45)', padding: '20px', borderRadius: '12px', marginBottom: '20px', display: 'flex', flexDirection: 'row', gap: '30px' }}>
+              <div style={{ flex: 1 }}>
                 <p style={{ fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '5px' }}>Địa điểm:</p>
                 <p>THPT Chuyên Lê Quý Đôn</p>
                 <p className="letter-detail-sub" style={{ paddingLeft: '0', fontSize: '0.95rem' }}>(số 1 Vũ Văn Dũng, Đà Nẵng)</p>
               </div>
-              <div>
+              <div style={{ flex: 1 }}>
                 <p style={{ fontWeight: 'bold', fontSize: '1.2rem', marginBottom: '5px' }}>Thời gian:</p>
                 <p>Ngày 9/5/2026 · Thứ Bảy</p>
                 <p style={{ fontWeight: 'bold', color: '#d95f4b', fontSize: '1.1rem' }}>Từ 11g00 đến 13g30</p>
@@ -142,7 +142,7 @@ export default function FlatCard() {
             </p>
           </div>
 
-          <div style={{ position: 'absolute', bottom: '20px', right: '40px', height: '60px', width: '300px' }}>
+          <div style={{ alignSelf: 'center', height: '40px', width: '200px', marginTop: 'auto' }}>
             <svg viewBox="0 0 200 50" width="100%" height="100%" aria-hidden="true">
               <path d="M10,40 Q30,20 50,30 Q70,10 90,25 Q110,5 130,20 Q150,0 170,20 Q190,5 210,25 Q230,10 250,30 Q270,20 290,40"
                 fill="none" stroke="var(--leaf-mid)" strokeWidth="1.5" />

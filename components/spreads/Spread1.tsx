@@ -87,7 +87,7 @@ export default function Spread1({ onNext }: Spread1Props) {
               Bạn có hẹn với Púc vào ngày 9/5/2026 :D
             </p>
             <p>
-              Update: Vì một số lí do riêng nên lịch chụp với bạn bè của Púc chuyển thành 11h-1h30. 
+              Update: Vì một số lí do riêng nên lịch chụp với bạn bè của Púc chuyển thành 11h-13h30. 
             </p>
 
             <div className="letter-details">
