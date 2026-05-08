@@ -13,20 +13,11 @@ function getGreeting(): string {
   return 'Ủa sao còn thức vậy? 🦉';
 }
 
-function getCountdown(target: Date): { days: number; hours: number; minutes: number; seconds: number } {
-  const now = new Date();
-  const diff = Math.max(0, target.getTime() - now.getTime());
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-  return { days, hours, minutes, seconds };
-}
+
 
 export default function FlatCard() {
   const [greeting, setGreeting] = useState('');
   const targetDate = new Date('2026-05-09T11:00:00+07:00');
-  const [countdown, setCountdown] = useState(getCountdown(targetDate));
   const cardRef = useRef<HTMLDivElement>(null);
 
   const flowerType = 'daisy'; 
@@ -34,10 +25,6 @@ export default function FlatCard() {
 
   useEffect(() => {
     setGreeting(getGreeting());
-    const timer = setInterval(() => {
-      setCountdown(getCountdown(targetDate));
-    }, 1000);
-    return () => clearInterval(timer);
   }, []);
 
   const handleExport = async () => {
@@ -150,32 +137,8 @@ export default function FlatCard() {
             </p>
           </div>
 
-          {/* Countdown & Decorative Section */}
+          {/* Decorative Section */}
           <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px dashed rgba(0,0,0,0.1)' }}>
-            <div className="countdown" style={{ margin: '0 auto', maxWidth: '300px' }}>
-              <p className="countdown-label" style={{ marginBottom: '15px' }}>Đếm ngược đến ngày kỉ yếu:</p>
-              <div className="countdown-digits" style={{ display: 'flex', justifyContent: 'center', gap: '5px' }}>
-                <div className="countdown-unit" style={{ background: 'rgba(255,255,255,0.5)', padding: '10px', borderRadius: '8px', minWidth: '55px' }}>
-                  <span className="countdown-num" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold' }}>{String(countdown.days).padStart(2, '0')}</span>
-                  <span className="countdown-text" style={{ fontSize: '0.8rem' }}>ngày</span>
-                </div>
-                <span className="countdown-sep" style={{ fontSize: '1.5rem', fontWeight: 'bold', alignSelf: 'center' }}>:</span>
-                <div className="countdown-unit" style={{ background: 'rgba(255,255,255,0.5)', padding: '10px', borderRadius: '8px', minWidth: '55px' }}>
-                  <span className="countdown-num" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold' }}>{String(countdown.hours).padStart(2, '0')}</span>
-                  <span className="countdown-text" style={{ fontSize: '0.8rem' }}>giờ</span>
-                </div>
-                <span className="countdown-sep" style={{ fontSize: '1.5rem', fontWeight: 'bold', alignSelf: 'center' }}>:</span>
-                <div className="countdown-unit" style={{ background: 'rgba(255,255,255,0.5)', padding: '10px', borderRadius: '8px', minWidth: '55px' }}>
-                  <span className="countdown-num" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold' }}>{String(countdown.minutes).padStart(2, '0')}</span>
-                  <span className="countdown-text" style={{ fontSize: '0.8rem' }}>phút</span>
-                </div>
-                <span className="countdown-sep" style={{ fontSize: '1.5rem', fontWeight: 'bold', alignSelf: 'center' }}>:</span>
-                <div className="countdown-unit" style={{ background: 'rgba(255,255,255,0.5)', padding: '10px', borderRadius: '8px', minWidth: '55px' }}>
-                  <span className="countdown-num" style={{ display: 'block', fontSize: '1.5rem', fontWeight: 'bold' }}>{String(countdown.seconds).padStart(2, '0')}</span>
-                  <span className="countdown-text" style={{ fontSize: '0.8rem' }}>giây</span>
-                </div>
-              </div>
-            </div>
 
             <div style={{ position: 'relative', height: '120px', marginTop: '30px' }}>
               <svg viewBox="0 0 200 100" width="100%" height="100%" aria-hidden="true" style={{ position: 'absolute', bottom: '-40px', left: 0 }}>
