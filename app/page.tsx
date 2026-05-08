@@ -1,11 +1,11 @@
 import LeafBackground from '@/components/LeafBackground';
-import Book from '@/components/Book';
+import FlatCard from '@/components/flat/FlatCard';
 
 export default function Home() {
   return (
     <main>
       <LeafBackground />
-      <Book />
+      <FlatCard />
     </main>
   );
 }
